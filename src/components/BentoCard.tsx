@@ -5,9 +5,11 @@ interface BentoCardProps {
     children: ReactNode;
     className?: string;
     delay?: number;
+    onClick?: () => void;
+    layoutId?: string;
 }
 
-export default function BentoCard({ children, className = "", delay = 0 }: BentoCardProps) {
+export default function BentoCard({ children, className = "", delay = 0, onClick, layoutId }: BentoCardProps) {
     const x = useMotionValue(0.5);
     const y = useMotionValue(0.5);
 
@@ -27,9 +29,10 @@ export default function BentoCard({ children, className = "", delay = 0 }: Bento
 
     return (
         <div
-            className={`relative group/card ${className}`}
+            className={`relative group/card ${className} ${onClick ? "cursor-pointer" : ""}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={onClick}
             style={{ perspective: "1000px" }}
         >
             <motion.div
@@ -37,6 +40,7 @@ export default function BentoCard({ children, className = "", delay = 0 }: Bento
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 style={{ rotateX, rotateY }}
+                layoutId={layoutId}
                 transition={{ duration: 0.5, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
                 className="glass-card rounded-[2.5rem] p-8 h-full overflow-hidden relative"
             >

@@ -8,6 +8,7 @@ import Projects from "./sections/Projects";
 import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import Certification from "./sections/Certification";
+import Skills from "./sections/Skills";
 
 function App() {
   useEffect(() => {
@@ -45,6 +46,10 @@ function App() {
       <main className="pt-24 pb-32">
         <Section delay={0.1}>
           <Hero />
+        </Section>
+
+        <Section id="skills" delay={0.15}>
+          <Skills />
         </Section>
 
         <Section id="work" delay={0.2}>

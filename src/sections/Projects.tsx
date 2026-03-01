@@ -1,25 +1,76 @@
-import BentoCard from "../components/BentoCard";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Marquee } from "@/components/magicui/marquee";
+import { X, Github, Code2, Globe } from "lucide-react";
+
+const ProjectMarqueeCard = ({ project, onClick }: { project: any; onClick: () => void }) => (
+    <div
+        onClick={onClick}
+        className="group relative w-[350px] md:w-[450px] aspect-[1.6/1] glass-card rounded-[2.5rem] p-8 overflow-hidden cursor-pointer border-white/10 hover:border-primary/50 transition-all duration-500"
+    >
+        <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+            {project.pattern}
+        </div>
+
+        <div className="relative z-10 h-full flex flex-col">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-black text-primary mb-2 block">
+                {project.category}
+            </span>
+            <h4 className="text-3xl font-black tracking-tighter mb-4 leading-none group-hover:text-primary transition-colors">
+                {project.title}
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                {project.description}
+            </p>
+
+            <div className="mt-auto flex items-center justify-between">
+                <div className="flex gap-2">
+                    {project.tech.slice(0, 2).map((tag: string) => (
+                        <span key={tag} className="px-2 py-1 bg-primary/10 rounded-full border border-primary/20 text-[8px] font-bold text-muted-foreground">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center group-hover:bg-primary transition-colors">
+                    <Code2 size={16} className="text-white group-hover:text-primary-foreground" />
+                </div>
+            </div>
+        </div>
+
+        {/* Hover Glow */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl" />
+    </div>
+);
 
 const Projects = () => {
+    const [selectedProject, setSelectedProject] = useState<any>(null);
+
     const projects = [
         {
+            id: "orbion",
             title: "Orbion",
-            category: "Game Dev",
+            category: "Game Development",
             description: "3D Ball Adventure with physics-based puzzles built in Unity.",
-            span: "md:col-span-2 md:row-span-2",
+            longDescription: "Orbion is a challenging 3D platformer where players control a high-tech sphere through increasingly complex environments. It features custom physics, dynamic lighting, and a unique 'gravity-shift' mechanic built from scratch in C#.",
+            tech: ["Unity", "C#", "Blender", "Shader Graph"],
+            github: "https://github.com/Harshvardhan210",
+            demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
                     <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1" />
-                    <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
                 </svg>
             )
         },
         {
+            id: "vitalviz",
             title: "VitalViz",
-            category: "Web App",
+            category: "Medical Tech",
             description: "Medical report visualization platform for health metrics tracking.",
-            span: "md:col-span-2 md:row-span-1",
+            longDescription: "VitalViz transforms complex medical data into intuitive, interactive dashboards. It helps patients and professionals track vital health trends over time with automated analysis and high-fidelity data visualization components.",
+            tech: ["React", "TypeScript", "D3.js", "Tailwind CSS"],
+            github: "https://github.com/Harshvardhan210",
+            demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
@@ -28,10 +79,14 @@ const Projects = () => {
             )
         },
         {
+            id: "ball-adventure",
             title: "Ball Adventure",
-            category: "Unity",
+            category: "Unity Enterprise",
             description: "Advanced 3D movement and environment design for Windows.",
-            span: "md:col-span-1 md:row-span-1",
+            longDescription: "A specialized project focusing on high-performance character controllers in Unity. Includes custom terrain generation and optimized rendering pipelines for mid-range hardware.",
+            tech: ["Unity", "C#", "HLSL", "U-Render"],
+            github: "https://github.com/Harshvardhan210",
+            demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <path d="M10 50 Q 50 10 90 50 T 10 50" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -39,10 +94,14 @@ const Projects = () => {
             )
         },
         {
+            id: "portfolio-v2",
             title: "Portfolio V2",
-            category: "React",
+            category: "Web Engineering",
             description: "Responsive personal site showcasing skills and certificates.",
-            span: "md:col-span-1 md:row-span-1",
+            longDescription: "My previous iteration focusing on clean typography and fast load times. Built with a focus on SEO and performance metrics, achieving a 100/100 Lighthouse score.",
+            tech: ["React", "High-Performance CSS", "Vite", "SEO Utils"],
+            github: "https://github.com/Harshvardhan210",
+            demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <circle cx="20" cy="20" r="5" fill="currentColor" />
@@ -53,37 +112,111 @@ const Projects = () => {
     ];
 
     return (
-        <div className="flex flex-col gap-12">
-            <div className="flex justify-between items-end">
-                <div className="flex flex-col gap-4">
-                    <h2 className="text-xs uppercase tracking-[0.3em] font-black text-primary/60">Selected Work</h2>
-                    <h3 className="text-5xl font-black tracking-tighter">Bento Portfolio</h3>
-                </div>
-                <button className="h-10 px-6 rounded-full glass-card text-[10px] font-black uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                    View all Projects
-                </button>
+        <div className="flex flex-col gap-12 relative py-20">
+            <div className="flex flex-col gap-4 text-center items-center px-6">
+                <h2 className="text-xs uppercase tracking-[0.4em] font-black text-primary/60">Portfolio Carousel</h2>
+                <h3 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">Selected <span className="text-primary">Work.</span></h3>
             </div>
 
-            <div className="bento-grid">
-                {projects.map((project, index) => (
-                    <BentoCard
-                        key={index}
-                        className={project.span}
-                        delay={index * 0.1}
-                    >
-                        {project.pattern}
-                        <div className="mt-auto relative z-20">
-                            <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-2 block">
-                                {project.category}
-                            </span>
-                            <h4 className="text-2xl font-black tracking-tighter mb-3 leading-none">{project.title}</h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px]">
-                                {project.description}
-                            </p>
-                        </div>
-                    </BentoCard>
-                ))}
+            <div className="relative w-full">
+                <Marquee pauseOnHover className="[--duration:40s] [--gap:2rem] py-10">
+                    {projects.map((project) => (
+                        <ProjectMarqueeCard
+                            key={project.id}
+                            project={project}
+                            onClick={() => setSelectedProject(project)}
+                        />
+                    ))}
+                </Marquee>
+
+                {/* Side Fade Gradients */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background z-20" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background z-20" />
             </div>
+
+            <AnimatePresence>
+                {selectedProject && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-6 md:p-12">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedProject(null)}
+                            className="absolute inset-0 bg-black/90 backdrop-blur-2xl"
+                        />
+
+                        <motion.div
+                            layoutId="modal-target"
+                            className="relative w-full max-w-5xl glass-card rounded-[3rem] p-8 md:p-16 overflow-hidden flex flex-col lg:flex-row gap-12 border-white/20 shadow-2xl"
+                        >
+                            <button
+                                onClick={() => setSelectedProject(null)}
+                                className="absolute top-8 right-8 w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition-colors z-50 text-white"
+                            >
+                                <X size={20} />
+                            </button>
+
+                            <div className="w-full lg:w-1/2 aspect-video lg:aspect-square rounded-[2rem] bg-white/5 relative overflow-hidden flex items-center justify-center border border-white/5">
+                                <div className="absolute inset-0 opacity-5">
+                                    {selectedProject.pattern}
+                                </div>
+                                <Code2 size={160} className="text-primary opacity-10" />
+
+                                <div className="absolute bottom-8 left-8 right-8 flex gap-3">
+                                    <div className="px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest text-white/60">
+                                        Release v1.2
+                                    </div>
+                                    <div className="px-4 py-2 bg-primary/20 backdrop-blur-md rounded-full border border-primary/20 text-[10px] font-black uppercase tracking-widest text-primary">
+                                        Live Production
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="w-full lg:w-1/2 flex flex-col gap-10">
+                                <div>
+                                    <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">
+                                        {selectedProject.category}
+                                    </span>
+                                    <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8">
+                                        {selectedProject.title}
+                                    </h2>
+                                    <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                                        {selectedProject.longDescription}
+                                    </p>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/50">Technologies Used</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedProject.tech.map((tag: string) => (
+                                            <span key={tag} className="px-4 py-2 bg-muted rounded-full border border-border text-[10px] font-black uppercase text-muted-foreground tracking-widest">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="mt-auto flex gap-4">
+                                    <a
+                                        href={selectedProject.github}
+                                        target="_blank"
+                                        className="h-16 flex-1 flex items-center justify-center gap-3 rounded-full bg-muted border border-border font-black text-xs uppercase tracking-widest hover:bg-muted/80 transition-colors"
+                                    >
+                                        <Github size={18} /> Source
+                                    </a>
+                                    <a
+                                        href={selectedProject.demo}
+                                        target="_blank"
+                                        className="h-16 flex-1 flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] transition-all"
+                                    >
+                                        <Globe size={18} /> Launch
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

@@ -19,6 +19,8 @@
     --border: 160 10% 12%;
     --input: 160 10% 12%;
     --ring: 150 100% 50%;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --radius: 1.5rem;
   }
 
@@ -40,6 +42,8 @@
     --border: 160 10% 90%;
     --input: 160 10% 90%;
     --ring: 150 100% 35%;
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -145,8 +149,10 @@
 }
 
 .glass-card {
-  @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_4px_50px_-12px_#00000080];
-  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), transparent);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  @apply shadow-[0_4px_50px_-12px_#00000080];
 }
 
 .bento-grid {
@@ -180,4 +186,34 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap, 1rem)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap, 1rem)));
+    }
+  }
 }
