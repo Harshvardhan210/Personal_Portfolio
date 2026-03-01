@@ -3,14 +3,19 @@ import { cn } from "@/lib/utils";
 import React from "react";
 
 const mainSkills = [
-  { name: "React", icon: "https://icon.icepanel.io/technology/svg/React.svg", color: "150, 100%, 50%" },
-  { name: "TypeScript", icon: "https://icon.icepanel.io/technology/svg/TypeScript.svg", color: "210, 100%, 50%" },
-  { name: "Node.js", icon: "https://icon.icepanel.io/technology/svg/Node.js.svg", color: "140, 100%, 40%" },
-  { name: "Next.js", icon: "https://icon.icepanel.io/technology/svg/Next.js.svg", color: "0, 0%, 100%" },
-  { name: "Tailwind", icon: "https://icon.icepanel.io/technology/svg/Tailwind-CSS.svg", color: "190, 100%, 50%" },
-  { name: "PostgreSQL", icon: "https://icon.icepanel.io/technology/svg/PostgreSQL.svg", color: "200, 100%, 40%" },
-  { name: "Docker", icon: "https://icon.icepanel.io/technology/svg/Docker.svg", color: "200, 100%, 50%" },
-  { name: "Framer", icon: "https://icon.icepanel.io/technology/svg/Framer-Motion.svg", color: "300, 100%, 50%" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", color: "193, 100%, 50%" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "200, 100%, 40%" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "200, 100%, 50%" },
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", color: "30, 80%, 50%" },
+  { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg", color: "140, 100%, 40%" },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", color: "53, 93%, 54%" },
+  { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg", color: "37, 100%, 50%" },
+  { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", color: "20, 100%, 50%" },
+  { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg", color: "190, 100%, 50%" },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "200, 80%, 45%" },
+  { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg", color: "210, 100%, 40%" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "0, 100%, 40%" },
+  { name: "GitHub", icon: "devicon-github-original", color: "0, 0%, 100%" },
 ];
 
 const GlassTile = ({ skill, index }: { skill: typeof mainSkills[0], index: number }) => {
@@ -34,12 +39,16 @@ const GlassTile = ({ skill, index }: { skill: typeof mainSkills[0], index: numbe
           style={{ backgroundColor: `hsla(${skill.color}, 1)` }}
         />
 
-        <div className="relative z-10 p-4 rounded-full bg-white/[0.02] group-hover:bg-transparent transition-colors duration-700">
-          <img
-            src={skill.icon}
-            alt={skill.name}
-            className="w-10 h-10 md:w-12 md:h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]"
-          />
+        <div className="relative z-10 p-4 rounded-full bg-white/[0.02] group-hover:bg-transparent transition-colors duration-700 flex items-center justify-center">
+          {skill.icon.startsWith("http") ? (
+            <img
+              src={skill.icon}
+              alt={skill.name}
+              className="w-10 h-10 md:w-12 md:h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]"
+            />
+          ) : (
+            <i className={cn(skill.icon, "text-4xl md:text-5xl filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]")} />
+          )}
         </div>
 
         <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground group-hover:text-foreground transition-colors duration-700">
@@ -80,22 +89,13 @@ export default function Skills() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-8xl font-black tracking-tighter text-center"
+          className="text-5xl md:text-8xl font-black tracking-tight text-center leading-[1.1]"
         >
-          Zen-Tech <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary/80 via-foreground to-primary/80 bg-[length:200%_auto] animate-mesh italic">
-            Showcase
+          Technical <br />
+          <span className="inline-block px-4 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary/80 via-foreground to-primary/80 bg-[length:200%_auto] animate-mesh italic">
+            Skills
           </span>
         </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.4 }}
-          viewport={{ once: true }}
-          className="text-[10px] uppercase tracking-[0.6em] font-black text-center max-w-xs"
-        >
-          A curated collection of refined technical expertise
-        </motion.p>
       </div>
 
       {/* Balanced Symmetrical Cluster */}
