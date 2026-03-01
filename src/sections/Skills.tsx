@@ -13,102 +13,106 @@ const mainSkills = [
   { name: "Framer", icon: "https://icon.icepanel.io/technology/svg/Framer-Motion.svg", color: "300, 100%, 50%" },
 ];
 
-const SkillPillar = ({ skill, index }: { skill: typeof mainSkills[0], index: number }) => {
+const GlassTile = ({ skill, index }: { skill: typeof mainSkills[0], index: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
-      whileHover={{ y: -20 }}
-      className="relative group cursor-default"
+      transition={{
+        delay: index * 0.05,
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="relative group cursor-none"
     >
-      {/* Background Glow */}
-      <div
-        className="absolute inset-0 blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-full"
-        style={{ backgroundColor: `hsla(${skill.color}, 1)` }}
-      />
+      <div className="relative w-32 h-32 md:w-40 md:h-40 glass-card bg-white/[0.02] border border-white/5 group-hover:border-primary/20 transition-all duration-700 rounded-[2.5rem] flex flex-col items-center justify-center gap-4 overflow-hidden">
+        {/* Subtle Ethereal Glow */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 blur-2xl"
+          style={{ backgroundColor: `hsla(${skill.color}, 1)` }}
+        />
 
-      <div className="relative glass-card flex flex-col items-center justify-center p-8 md:p-12 w-full md:w-[150px] aspect-[2/3] md:aspect-[3/5] rounded-[3rem] border border-white/5 group-hover:border-primary/30 transition-all duration-500 overflow-hidden">
-        {/* Environmental Reflection Effect */}
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/5 to-transparent skew-y-12 -translate-y-full group-hover:translate-y-0 transition-transform duration-1000" />
-
-        <div className="relative z-10 flex flex-col items-center gap-8 h-full">
-          <div className="mt-4 p-4 rounded-3xl bg-white/[0.03] border border-white/5 group-hover:bg-white/[0.08] group-hover:scale-110 transition-all duration-500">
-            <img src={skill.icon} alt={skill.name} className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
-          </div>
-
-          <div className="mt-auto items-center flex flex-col gap-2">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground group-hover:text-primary transition-colors">Tech</span>
-            <h3 className="text-sm md:text-base font-black uppercase tracking-widest text-foreground text-center line-clamp-1">
-              {skill.name}
-            </h3>
-          </div>
+        <div className="relative z-10 p-4 rounded-full bg-white/[0.02] group-hover:bg-transparent transition-colors duration-700">
+          <img
+            src={skill.icon}
+            alt={skill.name}
+            className="w-10 h-10 md:w-12 md:h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]"
+          />
         </div>
 
-        {/* Dynamic Light Strip */}
-        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+        <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground group-hover:text-foreground transition-colors duration-700">
+          {skill.name}
+        </span>
       </div>
 
-      {/* Vertical Title (Hidden on mobile) */}
-      <div className="absolute -left-12 top-1/2 -rotate-90 origin-center pointer-events-none hidden md:block">
-        <span className="text-[8px] font-black uppercase tracking-[1em] text-white/5 group-hover:text-white/10 transition-colors">EXPERTISE</span>
-      </div>
+      {/* Zen Floating Animation Overlay */}
+      <motion.div
+        animate={{
+          y: [0, -4, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: index * 0.2
+        }}
+        className="absolute inset-x-0 -bottom-2 h-1 w-1/4 mx-auto bg-primary/20 blur-[4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+      />
     </motion.div>
   );
 };
 
 export default function Skills() {
   return (
-    <div className="section-container relative min-h-screen flex flex-col items-center justify-center">
-      <div className="flex flex-col items-center gap-6 mb-32 relative z-20">
+    <div className="section-container relative min-h-[80vh] flex flex-col items-center justify-center py-20 overflow-hidden">
+      {/* Refined Header */}
+      <div className="flex flex-col items-center gap-8 mb-24 relative z-20">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="px-6 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-md mb-4"
-        >
-          <span className="text-[12px] uppercase tracking-[0.5em] font-black text-primary">Core Arsenal</span>
-        </motion.div>
+          className="w-12 h-[1px] bg-primary/30"
+        />
 
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-7xl md:text-[10rem] font-black tracking-tighter text-center leading-[0.7] md:leading-[0.7]"
+          className="text-5xl md:text-8xl font-black tracking-tighter text-center"
         >
-          Power <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-mesh">
-            Stack
+          Zen-Tech <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary/80 via-foreground to-primary/80 bg-[length:200%_auto] animate-mesh italic">
+            Showcase
           </span>
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          viewport={{ once: true }}
+          className="text-[10px] uppercase tracking-[0.6em] font-black text-center max-w-xs"
+        >
+          A curated collection of refined technical expertise
+        </motion.p>
       </div>
 
-      {/* Centered Pillar Layout */}
-      <div className="w-full max-w-7xl mx-auto flex flex-wrap justify-center gap-6 md:gap-8 px-6 relative z-10">
+      {/* Balanced Symmetrical Cluster */}
+      <div className="w-full max-w-5xl mx-auto flex flex-wrap justify-center gap-6 md:gap-10 px-10 relative z-10">
         {mainSkills.map((skill, idx) => (
-          <SkillPillar key={skill.name} skill={skill} index={idx} />
+          <GlassTile key={skill.name} skill={skill} index={idx} />
         ))}
       </div>
 
-      {/* Floating Experience Tag */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="mt-32 flex flex-col items-center gap-4 text-center"
-      >
-        <div className="flex items-center gap-4">
-          <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-primary/50" />
-          <p className="text-xs font-black uppercase tracking-[0.4em] text-muted-foreground">3+ Years of Refined Craft</p>
-          <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-primary/50" />
-        </div>
-      </motion.div>
+      {/* Refined Custom Cursor Area - Hint */}
+      <div className="mt-20 flex flex-col items-center opacity-20 group">
+        <div className="w-px h-16 bg-gradient-to-b from-primary via-transparent to-transparent group-hover:h-24 transition-all duration-1000" />
+      </div>
 
-      {/* Intense Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-primary/5 blur-[200px] rounded-full pointer-events-none -z-0" />
-      <div className="absolute inset-0 bg-background/20 backdrop-blur-[2px] pointer-events-none -z-0" />
+      {/* Ultra-Soft Background Elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.03)_0%,transparent_70%)] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none mix-blend-overlay -z-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </div>
   );
 }
