@@ -1,42 +1,39 @@
 import { motion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
+import springBootCert from "../assets/Spring boot Certificate.pdf";
+import jsCert from "../assets/JavaScript_Certification.pdf";
+import reactCert from "../assets/React_certificate.pdf";
+import isroCert from "../assets/isro_certificate.pdf";
 
 const Certification = () => {
     const certifications = [
         {
-            title: "Meta Front-End Developer Professional Certificate",
-            issuer: "Meta (Coursera)",
-            date: "2024",
-            link: "#",
-            desc: "Comprehensive certification covering React, JavaScript, Responsive Design, and Front-End Development best practices."
+            title: "Spring Framework for Java Development",
+            issuer: "SkillUp (Coursera)",
+            date: "2025",
+            link: springBootCert,
+            desc: "Comprehensive certification covering Spring Core, Spring Boot, Data Access, and building enterprise-grade Java applications."
         },
         {
-            title: "Java Full Stack Developer",
-            issuer: "Example Certification Body",
+            title: "Hands-On React. Build advanced React JS Frontend",
+            issuer: "Udemy (Nick Ovchinnikov)",
+            date: "2025",
+            link: reactCert,
+            desc: "Advanced React development course focused on building complex front-end applications with expert-level techniques."
+        },
+        {
+            title: "JavaScript 20 Projects In 20 Days",
+            issuer: "Udemy (Vijay Kumar)",
+            date: "2025",
+            link: jsCert,
+            desc: "Project-based learning covering 20 diverse JavaScript applications to master DOM manipulation and core JS logic."
+        },
+        {
+            title: "Overview of Space Science and Technology",
+            issuer: "ISRO (Indian Space Research Organisation)",
             date: "2023",
-            link: "#",
-            desc: "In-depth training on Java, Spring Boot, SQL, and building scalable full-stack applications."
-        },
-        {
-            title: "AWS Certified Cloud Practitioner",
-            issuer: "Amazon Web Services",
-            date: "2024",
-            link: "#",
-            desc: "Foundational understanding of AWS Cloud platform, including basic global infrastructure and security."
-        },
-        {
-            title: "Google Data Analytics Professional Certificate",
-            issuer: "Google (Coursera)",
-            date: "2023",
-            link: "#",
-            desc: "Hands-on experience with data cleaning, analysis, and visualization using SQL, R, and Tableau."
-        },
-        {
-            title: "IBM Full Stack Software Developer",
-            issuer: "IBM (edX)",
-            date: "2024",
-            link: "#",
-            desc: "Advanced training in cloud-native applications, containerization with Docker/Kubernetes, and CI/CD pipelines."
+            link: isroCert,
+            desc: "Online training programme (START) providing a comprehensive introduction to space science and technology."
         }
     ];
 
