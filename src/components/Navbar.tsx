@@ -26,7 +26,13 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 px-4 md:px-6 py-2.5 md:py-3 glass-card rounded-full flex items-center gap-4 md:gap-8 border-white/5 active:scale-95 transition-transform duration-300 w-[90%] md:w-auto justify-between md:justify-start"
     >
-      <a href="#" className="text-sm font-black tracking-tighter hover:text-primary transition-colors shrink-0">HT.</a>
+      <a
+        href="#hero"
+        onClick={(e) => scrollToSection(e, "hero")}
+        className="text-sm font-black tracking-tighter hover:text-primary transition-colors shrink-0 py-1"
+      >
+        HT.
+      </a>
 
       <div className="h-4 w-[1px] bg-white/10 hidden sm:block" />
 

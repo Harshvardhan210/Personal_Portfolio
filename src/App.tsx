@@ -44,7 +44,7 @@ function App() {
       <Navbar />
 
       <main className="pt-24 pb-32">
-        <Section delay={0.1}>
+        <Section id="hero" delay={0.1}>
           <Hero />
         </Section>
 
