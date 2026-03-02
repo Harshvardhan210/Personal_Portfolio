@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 const Education = () => {
     const education = [
         {
-            school: "Shri Ram Institute of Technology",
-            degree: "Master of Engineering in Computer Science",
+            school: "Master of Engineering in Computer Science",
+            degree: "Shri Ram Institute of Technology",
             period: "2024 — 2026",
             desc: "Specialized in Computer Science and Engineering. Current CGPA: 7.21/10."
         },
         {
-            school: "Shri Ram Institute of Technology",
-            degree: "Bachelor of Technology in Computer Science",
+            school: "Bachelor of Technology in Computer Science",
+            degree: "Shri Ram Institute of Technology",
             period: "2020 — 2024",
             desc: "Specialized in Computer Science and Engineering. Graduated with CGPA: 8.27/10."
         }
@@ -35,8 +35,8 @@ const Education = () => {
                             <span className="text-[10px] font-black text-accent tracking-[0.2em] uppercase">
                                 {edu.period}
                             </span>
-                            <h3 className="text-2xl font-black tracking-tighter leading-tight">{edu.school}</h3>
-                            <p className="text-sm text-muted-foreground font-bold uppercase tracking-widest leading-none">{edu.degree}</p>
+                            <h3 className="text-2xl font-bold tracking-tighter leading-tight">{edu.school}</h3>
+                            <p className="text-sm text-muted-foreground font-medium uppercase tracking-widest leading-none">{edu.degree}</p>
                         </div>
                         <p className="text-sm text-muted-foreground/60 font-medium leading-relaxed relative z-10">
                             {edu.desc}
