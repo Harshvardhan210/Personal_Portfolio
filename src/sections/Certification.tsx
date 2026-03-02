@@ -16,6 +16,27 @@ const Certification = () => {
             date: "2023",
             link: "#",
             desc: "In-depth training on Java, Spring Boot, SQL, and building scalable full-stack applications."
+        },
+        {
+            title: "AWS Certified Cloud Practitioner",
+            issuer: "Amazon Web Services",
+            date: "2024",
+            link: "#",
+            desc: "Foundational understanding of AWS Cloud platform, including basic global infrastructure and security."
+        },
+        {
+            title: "Google Data Analytics Professional Certificate",
+            issuer: "Google (Coursera)",
+            date: "2023",
+            link: "#",
+            desc: "Hands-on experience with data cleaning, analysis, and visualization using SQL, R, and Tableau."
+        },
+        {
+            title: "IBM Full Stack Software Developer",
+            issuer: "IBM (edX)",
+            date: "2024",
+            link: "#",
+            desc: "Advanced training in cloud-native applications, containerization with Docker/Kubernetes, and CI/CD pipelines."
         }
     ];
 
