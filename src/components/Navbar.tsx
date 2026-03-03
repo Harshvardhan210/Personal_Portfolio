@@ -30,7 +30,7 @@ const Navbar = () => {
       <a
         href="#hero"
         onClick={(e) => scrollToSection(e, "hero")}
-        className="text-sm font-black tracking-tighter hover:text-primary transition-colors shrink-0 w-10 h-10 flex items-center justify-center border-2 border-primary/20 rounded-full hover:border-primary/50"
+        className="text-sm font-black tracking-tighter hover:text-primary transition-colors shrink-0 w-10 h-10 flex items-center justify-center border-2 border-primary/0 rounded-full hover:border-primary/50"
       >
         HT.
       </a>
