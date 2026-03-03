@@ -9,6 +9,7 @@ import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import Certification from "./sections/Certification";
 import Skills from "./sections/Skills";
+import FloatingContact from "./components/FloatingContact";
 
 function App() {
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-black selection:text-white">
       <Navbar />
+      <FloatingContact />
 
       <main className="pt-24 pb-32">
         <Section id="hero" delay={0.1}>
@@ -82,8 +84,8 @@ function App() {
 
           <div className="flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
             <a href="https://github.com/Harshvardhan210" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-            <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-primary transition-colors">Twitter</a>
+            <a href="https://www.linkedin.com/in/harsh-vardhantiwari/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+            <a href="https://x.com/harshvardhant42" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a>
           </div>
 
           <p className="text-[10px] text-muted-foreground/40 font-mono">

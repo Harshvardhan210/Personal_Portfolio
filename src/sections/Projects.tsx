@@ -68,7 +68,7 @@ const Projects = () => {
             description: "3D Ball Adventure with physics-based puzzles built in Unity.",
             longDescription: "Orbion is a challenging 3D platformer where players control a high-tech sphere through increasingly complex environments. It features custom physics, dynamic lighting, and a unique 'gravity-shift' mechanic built from scratch in C#.",
             tech: ["Unity", "C#", "Blender", "Shader Graph"],
-            github: "https://github.com/Harshvardhan210",
+            github: "https://github.com/Harshvardhan210/Orbion---Ball-Adventure",
             demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
@@ -84,7 +84,7 @@ const Projects = () => {
             description: "Medical report visualization platform for health metrics tracking.",
             longDescription: "VitalViz transforms complex medical data into intuitive, interactive dashboards. It helps patients and professionals track vital health trends over time with automated analysis and high-fidelity data visualization components.",
             tech: ["React", "TypeScript", "D3.js", "Tailwind CSS"],
-            github: "https://github.com/Harshvardhan210",
+            github: "https://github.com/Harshvardhan210/Medical-Report-Visualization",
             demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
@@ -100,7 +100,7 @@ const Projects = () => {
             description: "Advanced 3D movement and environment design for Windows.",
             longDescription: "A specialized project focusing on high-performance character controllers in Unity. Includes custom terrain generation and optimized rendering pipelines for mid-range hardware.",
             tech: ["Unity", "C#", "HLSL", "U-Render"],
-            github: "https://github.com/Harshvardhan210",
+            github: "https://github.com/Harshvardhan210/Adventure-Ball-Game",
             demo: "#",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
@@ -108,22 +108,22 @@ const Projects = () => {
                 </svg>
             )
         },
-        {
-            id: "portfolio-v2",
-            title: "Portfolio V2",
-            category: "Web Engineering",
-            description: "Responsive personal site showcasing skills and certificates.",
-            longDescription: "My previous iteration focusing on clean typography and fast load times. Built with a focus on SEO and performance metrics, achieving a 100/100 Lighthouse score.",
-            tech: ["React", "High-Performance CSS", "Vite", "SEO Utils"],
-            github: "https://github.com/Harshvardhan210",
-            demo: "#",
-            pattern: (
-                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
-                    <circle cx="20" cy="20" r="5" fill="currentColor" />
-                    <circle cx="80" cy="80" r="10" fill="currentColor" />
-                </svg>
-            )
-        },
+        // {
+        //     id: "portfolio-v2",
+        //     title: "Portfolio V2",
+        //     category: "Web Engineering",
+        //     description: "Responsive personal site showcasing skills and certificates.",
+        //     longDescription: "My previous iteration focusing on clean typography and fast load times. Built with a focus on SEO and performance metrics, achieving a 100/100 Lighthouse score.",
+        //     tech: ["React", "High-Performance CSS", "Vite", "SEO Utils"],
+        //     github: "https://github.com/Harshvardhan210",
+        //     demo: "#",
+        //     pattern: (
+        //         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+        //             <circle cx="20" cy="20" r="5" fill="currentColor" />
+        //             <circle cx="80" cy="80" r="10" fill="currentColor" />
+        //         </svg>
+        //     )
+        // },
         {
             id: "cashflow",
             title: "CashFlow",
@@ -131,12 +131,31 @@ const Projects = () => {
             description: "Full-stack expense tracking web application.",
             longDescription: "A comprehensive expense tracker built with Spring Boot and PostgreSQL on the backend, and React on the frontend. It features data management and graphical representations of spending patterns to help users manage their finances effectively.",
             tech: ["Spring Boot", "React", "PostgreSQL", "Tailwind CSS"],
-            github: "https://github.com/Harshvardhan210/ExpenseTracker",
-            demo: "#",
+            github: "https://github.com/Harshvardhan210/cashflow-v1",
+            demo: "https://cashflow-v1.onrender.com/landingpage.html",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
                     <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
+                </svg>
+            )
+        },
+        {
+            id: "codecandy",
+            title: "CodeCandy",
+            category: "Dev Tool",
+            description: "Modern macOS-inspired code snippet manager.",
+            longDescription: "CodeCandy is a sleek, macOS-inspired code snippet manager designed for developers who value both productivity and aesthetics. It allows users to create, organize, and manage multi-block code snippets with real-time search and dynamic light/dark theme switching. Features smooth micro-animations and secure local persistence.",
+            tech: ["React", "Vite", "Framer Motion", "Firebase", "Lucide"],
+            github: "https://github.com/Harshvardhan210/CodeCandy",
+            demo: "https://codecandy.netlify.app/",
+            pattern: (
+                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+                    <path d="M30 30 L70 30 L70 70 L30 70 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <path d="M30 40 L70 40 M30 50 L70 50 M30 60 L70 60" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
+                    <circle cx="35" cy="35" r="1.5" fill="currentColor" />
+                    <circle cx="42" cy="35" r="1.5" fill="currentColor" />
+                    <circle cx="49" cy="35" r="1.5" fill="currentColor" />
                 </svg>
             )
         }
@@ -152,7 +171,7 @@ const Projects = () => {
             <div className="relative w-full">
                 <Marquee
                     pauseOnHover
-                    className={`[--duration:30s] [--gap:2rem] py-10 ${(isViewingAll || selectedProject) ? '[&_div]:[animation-play-state:paused]' : ''}`}
+                    className={`[--duration:15s] [--gap:2rem] py-10 ${(isViewingAll || selectedProject) ? '[&_div]:[animation-play-state:paused]' : ''}`}
                 >
                     {projects.slice(0, 3).map((project) => (
                         <ProjectMarqueeCard
@@ -322,13 +341,15 @@ const Projects = () => {
                                     >
                                         <Github size={18} /> Source
                                     </a>
-                                    <a
-                                        href={selectedProject.demo}
-                                        target="_blank"
-                                        className="h-16 flex-1 flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] transition-all"
-                                    >
-                                        <Globe size={18} /> Launch
-                                    </a>
+                                    {selectedProject.demo !== "#" && (
+                                        <a
+                                            href={selectedProject.demo}
+                                            target="_blank"
+                                            className="h-16 flex-1 flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] transition-all"
+                                        >
+                                            <Globe size={18} /> Launch
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

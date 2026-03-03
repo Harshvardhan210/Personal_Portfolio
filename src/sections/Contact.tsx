@@ -23,20 +23,32 @@ const Contact = () => {
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 relative z-10 w-full md:w-auto px-6 md:px-0">
         <motion.button
+          onClick={() => {
+            window.open(
+              "https://mail.google.com/mail/?view=cm&to=harshvardhanti12@gmail.com",
+              "_blank"
+            );
+          }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="h-16 px-12 rounded-full bg-primary text-primary-foreground font-black text-sm uppercase tracking-widest hover:shadow-[0_0_40px_-5px_hsl(var(--primary))] transition-all w-full md:w-auto"
+          className="h-16 px-12 rounded-full bg-primary text-primary-foreground font-black text-sm uppercase tracking-widest hover:shadow-[0_0_40px_-5px_hsl(var(--primary))] transition-all w-full md:w-auto flex items-center justify-center cursor-pointer"
         >
           Email Me
         </motion.button>
         <div className="flex items-center gap-6 md:gap-8">
-          {["LinkedIn", "GitHub", "Twitter"].map((social) => (
+          {[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/harsh-vardhantiwari/" },
+            { label: "GitHub", href: "https://github.com/Harshvardhan210" },
+            { label: "Twitter", href: "https://x.com/harshvardhant42" },
+          ].map(({ label, href }) => (
             <a
-              key={social}
-              href="#"
+              key={label}
+              href={href}
+              target={href !== "#" ? "_blank" : undefined}
+              rel={href !== "#" ? "noopener noreferrer" : undefined}
               className="text-[10px] md:text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors hover:translate-y-[-2px] inline-block duration-300"
             >
-              {social}
+              {label}
             </a>
           ))}
         </div>
