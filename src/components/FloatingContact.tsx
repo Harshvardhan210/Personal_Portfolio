@@ -37,7 +37,7 @@ const FloatingContact = () => {
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                 transition={{ duration: 0.2 }}
-                                className="w-72 rounded-2xl overflow-hidden"
+                                className="w-96 rounded-2xl overflow-hidden"
                                 style={{
                                     background: "hsl(var(--background))",
                                     border: "1px solid hsl(var(--primary)/0.2)",
@@ -57,7 +57,7 @@ const FloatingContact = () => {
                                 {/* Body */}
                                 <div className="p-4 flex flex-col gap-3">
                                     <textarea
-                                        rows={4}
+                                        rows={5}
                                         placeholder="Type your message…"
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
