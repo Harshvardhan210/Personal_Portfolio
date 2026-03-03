@@ -7,16 +7,17 @@ const Navbar = () => {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    const element = document.getElementById(id.toLowerCase());
+    if (!element) return;
     // @ts-ignore
     if (window.lenis) {
       // @ts-ignore
-      window.lenis.scrollTo(`#${id.toLowerCase()}`, {
-        offset: -100, // compensate for navbar height/padding
+      window.lenis.scrollTo(element, {
+        offset: -100,
         duration: 1.5,
       });
     } else {
-      const element = document.getElementById(id.toLowerCase());
-      element?.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
