@@ -164,8 +164,8 @@ const Projects = () => {
     return (
         <div className="flex flex-col gap-12 relative py-20">
             <div className="flex flex-col gap-4 text-center items-center px-6">
-                <h2 className="text-xs uppercase tracking-[0.4em] font-black text-primary/60">Portfolio Carousel</h2>
-                <h3 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">Selected <span className="text-primary">Work.</span></h3>
+                <h2 className="text-xs uppercase tracking-[0.4em] font-black text-primary/60">My Work</h2>
+                <h3 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">Projects<span className="text-primary">.</span></h3>
             </div>
 
             <div className="relative w-full">
