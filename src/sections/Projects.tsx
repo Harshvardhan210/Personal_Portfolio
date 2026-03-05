@@ -8,13 +8,19 @@ import { X, Github, Code2, Globe } from "lucide-react";
 const ProjectMarqueeCard = ({ project, onClick }: { project: any; onClick: () => void }) => (
     <div
         onClick={onClick}
-        className="group relative w-[350px] md:w-[450px] aspect-[1.6/1] glass-card rounded-[2.5rem] p-8 overflow-hidden cursor-pointer border-white/10 hover:border-primary/50 transition-all duration-500"
+        className="group relative w-[350px] md:w-[450px] aspect-[1.6/1] glass-card rounded-[2.5rem] overflow-hidden cursor-pointer border-white/10 hover:border-primary/50 transition-all duration-500"
     >
-        <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-            {project.pattern}
+        {/* Project Image */}
+        <div className="absolute inset-0 z-0">
+            <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 h-full flex flex-col">
+        <div className="relative z-10 h-full flex flex-col p-8">
             <span className="text-[10px] uppercase tracking-[0.3em] font-black text-primary mb-2 block">
                 {project.category}
             </span>
@@ -70,6 +76,7 @@ const Projects = () => {
             tech: ["Unity", "C#", "Blender", "Shader Graph"],
             github: "https://github.com/Harshvardhan210/Orbion---Ball-Adventure",
             demo: "#",
+            image: "/projects/orbion.png",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
@@ -86,6 +93,7 @@ const Projects = () => {
             tech: ["React", "TypeScript", "D3.js", "Tailwind CSS"],
             github: "https://github.com/Harshvardhan210/Medical-Report-Visualization",
             demo: "#",
+            image: "/projects/vitalviz.png",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
@@ -102,6 +110,7 @@ const Projects = () => {
             tech: ["Unity", "C#", "HLSL", "U-Render"],
             github: "https://github.com/Harshvardhan210/Adventure-Ball-Game",
             demo: "#",
+            image: "/projects/adventure-ball.png",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <path d="M10 50 Q 50 10 90 50 T 10 50" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -133,6 +142,7 @@ const Projects = () => {
             tech: ["Spring Boot", "React", "PostgreSQL", "Tailwind CSS"],
             github: "https://github.com/Harshvardhan210/cashflow-v1",
             demo: "https://cashflow-v1.onrender.com/landingpage.html",
+            image: "/projects/cashflow.png",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
@@ -149,6 +159,7 @@ const Projects = () => {
             tech: ["React", "Vite", "Framer Motion", "Firebase", "Lucide"],
             github: "https://github.com/Harshvardhan210/CodeCandy",
             demo: "https://codecandy.netlify.app/",
+            image: "/projects/codecandy.png",
             pattern: (
                 <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
                     <path d="M30 30 L70 30 L70 70 L30 70 Z" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -235,8 +246,13 @@ const Projects = () => {
                                             onClick={() => setSelectedProject(project)}
                                             className="group relative glass-card border-white/10 hover:border-primary/50 text-white rounded-3xl p-6 md:p-8 cursor-pointer overflow-hidden transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center"
                                         >
-                                            <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
-                                                {project.pattern}
+                                            <div className="absolute inset-0 z-0">
+                                                <img
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    className="w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
                                             </div>
 
                                             <div className="relative z-10 w-full md:w-1/3 shrink-0">
@@ -294,10 +310,12 @@ const Projects = () => {
                             </button>
 
                             <div className="w-full lg:w-1/2 aspect-video lg:aspect-square rounded-[2rem] bg-white/5 relative overflow-hidden flex items-center justify-center border border-white/5">
-                                <div className="absolute inset-0 opacity-5">
-                                    {selectedProject.pattern}
-                                </div>
-                                <Code2 size={160} className="text-primary opacity-10" />
+                                <img
+                                    src={selectedProject.image}
+                                    alt={selectedProject.title}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
                                 <div className="absolute bottom-8 left-8 right-8 flex gap-3">
                                     <div className="px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest text-white/60">
