@@ -149,8 +149,8 @@ const Hero = () => {
   const words = title.split(" ");
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-      <div className="flex flex-col gap-8 text-center md:text-left items-center md:items-start">
+    <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
+      <div className="flex flex-col gap-8 items-center max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -188,13 +188,13 @@ const Hero = () => {
             ))}
           </h1>
 
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-md reveal-text relative z-10">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-md mx-auto reveal-text relative z-10">
             Java & Spring Boot Backend Developer.Turning ideas into powerful backend solutions.
             Driven by clean code and continuous growth.
           </p>
         </motion.div>
 
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4 w-full sm:w-auto relative z-10">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4 w-full sm:w-auto relative z-10 justify-center">
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
@@ -213,52 +213,6 @@ const Hero = () => {
           </motion.button>
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: [0.215, 0.61, 0.355, 1] }}
-        className="relative aspect-square md:aspect-auto md:h-[500px] w-full rounded-[3rem] md:rounded-[4rem] overflow-hidden glass-card group/hero"
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-3xl animate-mesh bg-[length:200%_auto]" />
-
-        {/* Abstract SVG Pattern */}
-        <div className="absolute inset-0 opacity-10 group-hover/hero:opacity-20 transition-opacity duration-1000">
-          {/* <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 100L100 0M-10 110L110 -10M10 90L90 10" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="0.2" strokeDasharray="2 2" />
-            <rect x="20" y="20" width="60" height="60" stroke="currentColor" strokeWidth="0.1" rotate="45" />
-          </svg> */}
-        </div>
-
-
-        <div className="absolute inset-0 flex items-center justify-center p-6 md:p-12">
-          <div className="relative w-full h-full rounded-[2.5rem] md:rounded-[3rem] border border-white/10 bg-black/20 backdrop-blur-3xl p-8 md:p-10 flex flex-col justify-end group-hover/hero:scale-[0.98] transition-transform duration-700">
-            <img src={heroPortrait} alt="" className="w-full h-full rounded-[2.5rem] md:rounded-[3rem] absolute inset-0 object-cover" />
-            {/* <div className="text-[10px] uppercase tracking-[0.3em] font-black text-primary mb-4">Featured Research</div> */}
-            {/* <div className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight">
-              The future of <br />
-              <span className="text-white/40">spatial interfaces.</span>
-            </div> */}
-          </div>
-        </div>{/* Floating Shapes - Reduced for mobile */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-10 right-10 w-20 h-20 md:w-32 md:h-32 rounded-full border border-primary/10 bg-primary/5 backdrop-blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, 20, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-20 left-10 w-16 h-16 md:w-24 md:h-24 rounded-2xl border border-accent/10 bg-primary/5 backdrop-blur-3xl rotate-12"
-        />
-      </motion.div>
 
       <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
