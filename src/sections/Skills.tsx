@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import React from "react";
+
 
 const mainSkills = [
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", color: "193, 100%, 50%" },

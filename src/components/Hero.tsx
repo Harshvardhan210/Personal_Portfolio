@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, FileText, ExternalLink, ShieldCheck } from "lucide-react";
-import heroPortrait from "../assets/hero-portrait-removebg-preview.png";
+
 import resume from "../assets/Harshvardhan Tiwari Resume.pdf";
 
 const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
