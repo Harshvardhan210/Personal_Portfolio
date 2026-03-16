@@ -169,6 +169,23 @@ const Projects = () => {
                     <circle cx="49" cy="35" r="1.5" fill="currentColor" />
                 </svg>
             )
+        },
+        {
+            id: "animecloud",
+            title: "AnimeCloud",
+            category: "Web App",
+            description: "Anime recommendation site to discover your next favourite series.",
+            longDescription: "AnimeCloud is a feature-rich anime recommendation platform that helps users discover, explore, and track their favourite anime series. It leverages external anime APIs to deliver personalised recommendations, detailed show info, and a smooth browsing experience with a sleek dark UI.",
+            tech: ["React", "Spring Boot", "REST API", "Tailwind CSS"],
+            github: "https://github.com/Harshvardhan210/AnimeCloud",
+            demo: "https://avault.netlify.app/",
+            image: "/projects/animecloud.png",
+            pattern: (
+                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+                    <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
+                </svg>
+            )
         }
     ];
 
