@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import Lenis from "lenis";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
@@ -12,34 +10,6 @@ import Skills from "./sections/Skills";
 import FloatingContact from "./components/FloatingContact";
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    // @ts-ignore
-    window.lenis = lenis;
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-black selection:text-white">
       <Navbar />
