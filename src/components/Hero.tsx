@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, FileText, ExternalLink, ShieldCheck } from "lucide-react";
 
-import resume from "../assets/Harshvardhan Tiwari Resume.pdf";
+import resume from "../assets/Harshvardhan_Tiwari_Resume.pdf";
 
 const ResumeModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [isScanning, setIsScanning] = useState(true);
