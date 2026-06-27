@@ -68,6 +68,63 @@ const Projects = () => {
 
     const projects = [
         {
+            id: "zenjob",
+            title: "ZenJob",
+            category: "Full-Stack App",
+            description: "Cross-platform job application tracker with a mobile-first experience.",
+            longDescription: "ZenJob is a full-stack job application management platform built with FastAPI and React. It allows users to track job applications across devices with a companion Android APK. Features include Firestore-backed real-time sync, a FastAPI backend deployed on Render, and a polished landing page with direct APK download.",
+            tech: ["FastAPI", "React", "Firebase", "PostgreSQL", "Capacitor"],
+            github: "https://github.com/Harshvardhan210/ZenJob",
+            demo: "https://zenjob.space/",
+            image: "/projects/zenjob.png",
+            pattern: (
+                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
+                </svg>
+            )
+        },
+        {
+            id: "midas-core",
+            title: "Midas Core",
+            category: "Backend / Microservices",
+            description: "Event-driven order processing system built with Apache Kafka.",
+            longDescription: "Midas Core is a production-grade order processing microservices system using Apache Kafka as the event backbone. It features producer and consumer services for order placement, inventory reservation, and payment confirmation, demonstrating real-world async event-driven architecture patterns with Spring Boot.",
+            tech: ["Spring Boot", "Apache Kafka", "Docker", "Java", "Microservices"],
+            github: "https://github.com/Harshvardhan210/order-processing-kafka-system",
+            demo: "#",
+            image: "/projects/midas-core.png",
+            pattern: (
+                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+                    <circle cx="20" cy="50" r="8" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="50" cy="50" r="8" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="80" cy="50" r="8" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <line x1="28" y1="50" x2="42" y2="50" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 2" />
+                    <line x1="58" y1="50" x2="72" y2="50" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 2" />
+                </svg>
+            )
+        },
+        {
+            id: "github-access-audit",
+            title: "GitHub Access Audit",
+            category: "DevOps / Security",
+            description: "Automated GitHub access report service for org-level permission auditing.",
+            longDescription: "GitHub Access Report Service is a Spring Boot application that integrates with the GitHub API to generate detailed access audit reports for organisations. It lists repositories, collaborators, and their permission levels, helping teams stay on top of security compliance and access hygiene across their GitHub org.",
+            tech: ["Spring Boot", "Java", "GitHub API", "RESTful API", "Docker"],
+            github: "https://github.com/Harshvardhan210/github-access-audit",
+            demo: "#",
+            image: "/projects/github-audit.png",
+            pattern: (
+                <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
+                    <rect x="15" y="15" width="70" height="70" rx="8" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <line x1="15" y1="35" x2="85" y2="35" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="15" y1="55" x2="85" y2="55" stroke="currentColor" strokeWidth="0.5" />
+                    <circle cx="30" cy="25" r="3" fill="currentColor" />
+                    <circle cx="42" cy="25" r="3" fill="currentColor" />
+                </svg>
+            )
+        },
+        {
             id: "orbion",
             title: "Orbion",
             category: "Game Development",
@@ -117,22 +174,6 @@ const Projects = () => {
                 </svg>
             )
         },
-        // {
-        //     id: "portfolio-v2",
-        //     title: "Portfolio V2",
-        //     category: "Web Engineering",
-        //     description: "Responsive personal site showcasing skills and certificates.",
-        //     longDescription: "My previous iteration focusing on clean typography and fast load times. Built with a focus on SEO and performance metrics, achieving a 100/100 Lighthouse score.",
-        //     tech: ["React", "High-Performance CSS", "Vite", "SEO Utils"],
-        //     github: "https://github.com/Harshvardhan210",
-        //     demo: "#",
-        //     pattern: (
-        //         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 100 100">
-        //             <circle cx="20" cy="20" r="5" fill="currentColor" />
-        //             <circle cx="80" cy="80" r="10" fill="currentColor" />
-        //         </svg>
-        //     )
-        // },
         {
             id: "cashflow",
             title: "CashFlow",
@@ -188,6 +229,7 @@ const Projects = () => {
             )
         }
     ];
+
 
     return (
         <div className="flex flex-col gap-12 relative py-20">

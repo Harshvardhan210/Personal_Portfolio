@@ -4,9 +4,17 @@ import springBootCert from "../assets/Spring boot Certificate.pdf";
 import jsCert from "../assets/JavaScript_Certification.pdf";
 import reactCert from "../assets/React_certificate.pdf";
 import isroCert from "../assets/isro_certificate.pdf";
+import jpMorganCert from "../assets/JPMorgan Chase & Co. certificate.pdf";
 
 const Certification = () => {
     const certifications = [
+        {
+            title: "Software Engineering Job Simulation",
+            issuer: "JPMorgan Chase & Co. (Forage)",
+            date: "2024",
+            link: jpMorganCert,
+            desc: "Completed a job simulation involving setting up a local dev environment, fixing broken repository files, and displaying data using JPMorgan's open-source Perspective library."
+        },
         {
             title: "Spring Framework for Java Development",
             issuer: "SkillUp (Coursera)",
@@ -34,7 +42,7 @@ const Certification = () => {
             date: "2023",
             link: isroCert,
             desc: "Online training programme (START) providing a comprehensive introduction to space science and technology."
-        }
+        },
     ];
 
     return (

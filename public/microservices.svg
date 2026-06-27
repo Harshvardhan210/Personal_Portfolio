@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white">
+
+  <!-- Connecting lines: Top -->
+  <rect x="248" y="110" width="16" height="62"/>
+  <!-- Connecting lines: Bottom -->
+  <rect x="248" y="340" width="16" height="62"/>
+  <!-- Connecting lines: Left -->
+  <rect x="110" y="248" width="62" height="16"/>
+  <!-- Connecting lines: Right -->
+  <rect x="340" y="248" width="62" height="16"/>
+  <!-- Top-left connector -->
+  <rect x="147" y="136" width="16" height="58" transform="rotate(-45 155 165)"/>
+  <!-- Top-right connector -->
+  <rect x="349" y="136" width="16" height="58" transform="rotate(45 357 165)"/>
+  <!-- Bottom-left connector -->
+  <rect x="147" y="318" width="16" height="58" transform="rotate(45 155 347)"/>
+  <!-- Bottom-right connector -->
+  <rect x="349" y="318" width="16" height="58" transform="rotate(-45 357 347)"/>
+
+  <!-- Central Gear -->
+  <path d="M308,240v-24l-22-8c-3-8-7-15-12-22l9-21L266,148l-21,9c-7-5-14-9-22-12l-8-22h-24l-8,22c-8,3-15,7-22,12l-21-9l-17,17l9,21c-5,7-9,14-12,22l-22,8v24l22,8c3,8,7,15,12,22l-9,21l17,17l21-9c7,5,14,9,22,12l8,22h24l8-22c8-3,15-7,22-12l21,9l17-17l-9-21c5-7,9-14,12-22L308,240z M204,274c-28,0-50-22-50-50s22-50,50-50s50,22,50,50S232,274,204,274z" transform="translate(52,56)"/>
+
+  <!-- Small inner circle detail -->
+  <circle cx="256" cy="224" r="8"/>
+  <circle cx="272" cy="238" r="5"/>
+
+  <!-- Top Hexagon -->
+  <polygon points="256,14 280,28 280,56 256,70 232,56 232,28"/>
+  <!-- Bottom Hexagon -->
+  <polygon points="256,442 280,456 280,484 256,498 232,484 232,456"/>
+  <!-- Left Hexagon -->
+  <polygon points="14,256 28,232 56,232 70,256 56,280 28,280"/>
+  <!-- Right Hexagon -->
+  <polygon points="498,256 484,232 456,232 442,256 456,280 484,280"/>
+  <!-- Top-left Hexagon -->
+  <polygon points="72,72 96,58 122,58 136,72 122,86 96,86"/>
+  <!-- Top-right Hexagon -->
+  <polygon points="440,72 454,58 480,58 494,72 480,86 454,86"/>
+  <!-- Bottom-left Hexagon -->
+  <polygon points="72,440 96,426 122,426 136,440 122,454 96,454"/>
+  <!-- Bottom-right Hexagon -->
+  <polygon points="440,440 454,426 480,426 494,440 480,454 454,454"/>
+</svg>

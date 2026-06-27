@@ -16,6 +16,9 @@ const mainSkills = [
   { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg", color: "210, 100%, 40%" },
   { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "0, 100%, 40%" },
   { name: "GitHub", icon: "devicon-github-original", color: "0, 0%, 100%" },
+  { name: "Oracle DB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg", color: "10, 100%, 45%" },
+  { name: "RESTful API", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg", color: "160, 100%, 40%" },
+  { name: "Microservices", icon: "/microservices.svg", color: "255, 70%, 65%" },
 ];
 
 const GlassTile = ({ skill, index }: { skill: typeof mainSkills[0], index: number }) => {
@@ -40,7 +43,7 @@ const GlassTile = ({ skill, index }: { skill: typeof mainSkills[0], index: numbe
         />
 
         <div className="relative z-10 p-4 rounded-full bg-white/[0.02] group-hover:bg-transparent transition-colors duration-700 flex items-center justify-center">
-          {skill.icon.startsWith("http") ? (
+          {skill.icon.startsWith("http") || skill.icon.startsWith("/") ? (
             <img
               src={skill.icon}
               alt={skill.name}
